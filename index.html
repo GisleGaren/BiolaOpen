@@ -290,7 +290,7 @@
 
         .section-sub {
             text-align: center;
-            color: rgba(255,255,255,0.42);
+            color: rgba(255,255,255,0.65);
             margin-bottom: 3rem;
             font-size: 0.93rem;
         }
@@ -388,17 +388,22 @@
         .meme-img-ph span:last-child  { font-size: 0.76rem; color: rgba(255,255,255,0.25); text-transform: uppercase; letter-spacing: 0.08em; }
 
         /* ===== PLAYER CARDS ===== */
+        #deltagere {
+            max-width: 1500px;
+        }
+
         .players-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
         }
 
         .player-card {
-            background: rgba(255,255,255,0.04);
+            background: rgba(13,17,23,0.92);
+            backdrop-filter: blur(14px);
             border: 1px solid rgba(255,255,255,0.09);
             border-radius: 1.5rem;
-            padding: 1.75rem 1.5rem;
+            padding: 2.25rem 2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -415,8 +420,8 @@
 
         /* Photo area — swap the placeholder for a real <img> when ready */
         .player-photo {
-            width: 110px;
-            height: 110px;
+            width: 230px;
+            height: 230px;
             border-radius: 50%;
             overflow: hidden;
             border: 2px dashed rgba(255,255,255,0.18);
@@ -424,7 +429,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.2rem;
+            font-size: 4rem;
             color: rgba(255,255,255,0.2);
             flex-shrink: 0;
             position: relative;
@@ -444,28 +449,28 @@
             font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: rgba(255,255,255,0.28);
+            color: rgba(255,255,255,0.5);
             margin-top: 0.2rem;
         }
 
         .player-name {
             font-family: 'Fredoka One', cursive;
             font-size: 1.2rem;
-            color: rgba(255,255,255,0.9);
+            color: rgba(255,255,255,0.95);
             line-height: 1.2;
         }
 
-        .player-name.tba { color: rgba(255,255,255,0.22); }
+        .player-name.tba { color: rgba(255,255,255,0.4); }
 
         .player-bio {
             font-size: 0.82rem;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.75);
             line-height: 1.55;
             font-style: italic;
             min-height: 2.5em;
         }
 
-        .player-bio.empty { color: rgba(255,255,255,0.18); font-style: normal; }
+        .player-bio.empty { color: rgba(255,255,255,0.35); font-style: normal; }
 
         .player-badge {
             display: inline-block;
@@ -475,8 +480,8 @@
             text-transform: uppercase;
             padding: 0.2rem 0.7rem;
             border-radius: 999px;
-            border: 1px solid rgba(255,255,255,0.14);
-            color: rgba(255,255,255,0.22);
+            border: 1px solid rgba(255,255,255,0.18);
+            color: rgba(255,255,255,0.45);
             margin-top: 0.2rem;
         }
 
@@ -604,13 +609,18 @@
         }
 
         /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .players-grid { grid-template-columns: repeat(2, 1fr); }
+            .player-photo { width: 190px; height: 190px; }
+        }
+
         @media (max-width: 640px) {
             .nav-links { display: none; }
             .cd-num    { font-size: 1.75rem; }
             .event-info { gap: 0.4rem 0.8rem; }
             .froosh-box { padding: 2rem 1.25rem; }
-            .players-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
-            .player-photo { width: 90px; height: 90px; }
+            .players-grid { grid-template-columns: 1fr; }
+            .player-photo { width: 180px; height: 180px; }
         }
     </style>
 </head>
@@ -647,14 +657,14 @@
     <div class="court-bg"><div class="court-rect"></div></div>
 
     <div class="hero-content">
-        <div class="hero-badge">🏆 Offisiell Turnering · Norge · 2026</div>
+        <div class="hero-badge">🏆 Offisiell Turnering 2026</div>
 
         <h1 class="hero-title">
             <span class="t-biola">BIOLA</span><br>
             <span class="t-open">OPEN</span>
         </h1>
 
-        <p class="hero-sub">Norges Kuleste Tennisturnering</p>
+        <p class="hero-sub">Grand Slam Turneringen til Bekk</p>
 
         <!-- Date / Time / Location -->
         <div class="event-info">
@@ -737,27 +747,33 @@
              4. Bytt .player-badge til <div class="player-badge confirmed">Påmeldt</div>
         -->
         <div class="player-card">
-            <div class="player-photo">?</div>
+            <div class="player-photo"><img src="gisle.jpeg" onload="this.style.opacity='1'"></div>
             <div class="player-num">Plass 1</div>
-            <div class="player-name tba">TBA</div>
-            <div class="player-bio empty">Morsom beskrivelse her...</div>
-            <div class="player-badge">Ledig</div>
+            <div class="player-name tba">Gisle "CEO" Garen</div>
+            <div class="player-bio empty">Turneringsdirektør, vert og selvutnevnt publikumsfavoritt. Gisle spiller en form for offensiv tennis der planen som regel er god, men gjennomføringen tidvis blir påvirket av ytre omstendigheter som vind, sol, underlag, racketspenning og generell kosmisk motstand. Endte på en svært strategisk 7. plass av 12 i Froosh Open, hovedsakelig fordi vinden konsekvent blåste mot ham og racketen angivelig «ikke ga noe gratis». På en vindstille dag, med riktig racket, korrekt luftfuktighet og medvind på begge sider av nettet, er potensialet betydelig. Som vert har han dessuten full kontroll på kampoppsettet, noe ingen bør tenke for mye over.
+</div>
+          
         </div>
 
         <div class="player-card">
-            <div class="player-photo">?</div>
+            <div class="player-photo"><img src="lava.png" onload="this.style.opacity='1'"></div>
             <div class="player-num">Plass 2</div>
-            <div class="player-name tba">TBA</div>
-            <div class="player-bio empty">Morsom beskrivelse her...</div>
-            <div class="player-badge">Ledig</div>
+            <div class="player-name tba">Laurits "Skjærefjøla" Bjørhovde Rossebø</div>
+            <div class="player-bio empty">Laurits spiller tennis som om hver ball først må innom kjøkkenbenken. Med en slice som holder seg lavere enn ambisjonsnivået til en mandag morgen, skjærer han rytmen ut av motstanderen poeng for poeng.
+
+Han endte på 6. plass i Froosh Open, én plass foran Gisle, men bærer fortsatt på det ubeleilige faktum at han tidligere har tapt mot turneringsdirektøren. Med solid backhand, stabil forehand og en nesten provoserende god slice er Laurits typen spiller man først undervurderer, deretter irriterer seg over, og til slutt møter på nettet med et tomt blikk og begynnende eksistensiell tvil.</div>
+           
         </div>
 
         <div class="player-card">
-            <div class="player-photo">?</div>
+            <div class="player-photo"><img src="Lea.png" onload="this.style.opacity='1'"></div>
             <div class="player-num">Plass 3</div>
-            <div class="player-name tba">TBA</div>
-            <div class="player-bio empty">Morsom beskrivelse her...</div>
-            <div class="player-badge">Ledig</div>
+            <div class="player-name tba">Lea "Ingen gratispoeng" Aas-Jakobsen</div>
+            <div class="player-bio empty">Lea spiller tennis etter et enkelt prinsipp: Hvis motstanderen skal vinne et poeng, får de gjøre hele jobben selv. Hun server forsiktig, presist og med så lav feilprosent at en dobbeltfeil nærmest må regnes som en administrativ glipp. Ballen kommer inn, rallyet starter, og derfra begynner den langsomme nedbrytningen.
+
+Som klassisk counterpuncher lar hun motstanderen slå først, hardere og dummere, før hun rolig sender ballen tilbake én gang til. Og én gang til. Og én gang til.
+
+Froosh Open sto hun over, angivelig fordi turneringen ikke holdt nødvendig kulturelt nivå. Biola Open, derimot, besto kvalitetskontrollen. Dermed stiller Lea som feltets tryggeste investering: få feil, null gaver og absolutt ingen gratispoeng.</div>
         </div>
 
         <div class="player-card">
@@ -895,13 +911,9 @@
         <div class="card">
             <div class="card-icon">🏆</div>
             <h3>Flest poeng vinner</h3>
-            <p>På slutten av dagen tar spilleren med flest akkumulerte poeng med seg den legendariske Biola-premien hjem.</p>
+            <p>På slutten av dagen tar spilleren med flest akkumulerte poeng med seg premien hjem.</p>
         </div>
-        <div class="card">
-            <div class="card-icon">☀️</div>
-            <h3>En hel dag på banen</h3>
-            <p>Ingen reiser hjem tidlig etter et tap. Alle spiller fra start til slutt. Uavbrutt sommerlig tennis-moro.</p>
-        </div>
+
     </div>
 </section>
 </div>
